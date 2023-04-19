@@ -1,0 +1,241 @@
+@import "./fonts/Gogh/stylesheet.css";
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #060606;
+    color: #FFFFFF;
+    font-family: 'VelaSansRegular',sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1 {
+    font-family: 'Gogh', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 5.25rem;
+}
+
+.app {
+    width: 1440px;
+    box-sizing: border-box;
+    padding: 0 2.75rem;
+    margin: auto;
+}
+
+.app-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+    padding: .875rem 0;
+}
+
+.header-nav {
+    display: flex;
+    gap: 1.8125rem;
+    font-size: .875rem;
+}
+
+.header-nav__link:last-child{
+    margin-left: 32.0625rem;
+}
+
+.app-main {
+    padding: 1.75rem 0;
+}
+
+.main-homepage {
+    background-image: url("./assets/gif-1.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 71.875rem;
+}
+
+.main-homepage__title {
+    margin-bottom: 17.1875rem;
+    width: 31.125rem;
+}
+
+.main-homepage__subtitle {
+    text-align: right;
+}
+
+
+.block__description {
+    text-align: left;
+    font-size: 2.625rem;
+    text-indent: 31.625rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #FFFFFF;
+    margin-bottom: 1.25rem;
+    line-height: 120%;
+    margin-top: 7.5rem;
+}
+
+.main-about {
+    text-align: right;
+}
+
+.block-content {
+    display: flex;
+    text-align: left;
+    justify-content: space-between;
+}
+
+.block-text {
+    font-size: 1.25rem;
+    width: 42.625rem;
+    margin-right: 10rem;
+}
+
+.block-text__text {
+    margin: 0;
+}
+
+.subtext {
+    margin-left: 6.4375rem;
+    margin-top: .75rem;
+}
+
+.main-tour .block__description, .main-team .block__description {
+    padding-bottom: 3.75rem;
+}
+
+.tour-map {
+    margin-top: 3.75rem;
+    position: relative;
+}
+
+.tour-map__image {
+    width: 83.884375rem;
+    display: block;
+    margin: auto;
+}
+
+.map__button {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: 1px dashed #FFFFFF;
+    border-radius: 50%;
+    cursor: pointer;
+    background: none;
+    color: #FFFFFF;
+    transition: background-color 1s, color 1s;
+}
+
+.map__button:hover {
+    background-color: #FFFFFF;
+    color: #060606;
+}
+
+.b-button {
+    top: 12.125rem;
+    left: 35rem;
+}
+
+.g-button {
+    top: 10.8125rem;
+    left: 62.0625rem;
+}
+
+.t-button {
+    top: 21.5625rem;
+    left: 70.4375rem;
+}
+
+.k-button {
+    top: 25.9375rem;
+    left: 10.0625rem;
+}
+
+.team-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 3.75rem;
+}
+
+.list-item {
+    display: flex;
+    gap: 12.6875rem;
+}
+
+.list-item__header {
+    width: 19.1875rem;
+    font-size: 2rem;
+    line-height: 120%;
+}
+
+.list-item-names {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    color: #838383;
+    font-size: 1.25rem;
+}
+
+.social-media {
+    text-transform: uppercase;
+    margin-top: 8.125rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin-bottom: 1.5625rem;
+}
+
+.social-media__header {
+    margin: 0;
+    font-size: .875rem;
+    font-weight: 400;
+}
+
+.social-media__link {
+    color: #838383;
+}
+
+.app-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__rights {
+    font-family: 'Gogh', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    width: 11.9375rem;
+}
+
+.footer__name {
+
+}
+
+.footer__gif {
+    width: 5.8125rem;
+}
+
+@media (max-width: 760px) {
+
+}
+
+@font-face {
+    font-family: 'VelaSansBold';
+    src: url("./fonts/VelaSans-Bold.ttf");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'VelaSansRegular';
+    src: url("./fonts/VelaSans-Regular.ttf");
+    font-style: normal;
+    font-weight: normal;
+}
