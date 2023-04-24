@@ -1,25 +1,18 @@
-@import "./fonts/Gogh/stylesheet.css";
+@import "./typography.css";
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
     padding: 0;
     background-color: #060606;
     color: #FFFFFF;
-    font-family: 'VelaSansRegular',sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-h1 {
-    font-family: 'Gogh', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    text-transform: uppercase;
-    font-size: 5.25rem;
 }
 
 .app {
-    width: 1440px;
+    width: auto;
     box-sizing: border-box;
     padding: 0 2.75rem;
     margin: auto;
@@ -36,11 +29,41 @@ h1 {
 .header-nav {
     display: flex;
     gap: 1.8125rem;
-    font-size: .875rem;
 }
 
 .header-nav__link:last-child{
     margin-left: 32.0625rem;
+}
+
+.header-nav__link {
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.header-nav__link:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 1px;
+    background-color: #FFFFFF;
+    right: 0;
+    bottom: -3px;
+    transition: width 0.5s;
+}
+
+.header-nav__link:hover:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #FFFFFF;
+    left: 0;
+    bottom: -3px;
+    transition: width 0.5s;
 }
 
 .app-main {
@@ -48,10 +71,11 @@ h1 {
 }
 
 .main-homepage {
-    background-image: url("./assets/gif-1.gif");
+    background-image: url("./assets/elements/gif-1.gif");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 71.875rem;
+    text-transform: uppercase;
 }
 
 .main-homepage__title {
@@ -66,17 +90,19 @@ h1 {
 
 .block__description {
     text-align: left;
-    font-size: 2.625rem;
     text-indent: 31.625rem;
-    padding-bottom: 1.5rem;
+    padding-bottom: 1.3rem;
     border-bottom: 1px solid #FFFFFF;
     margin-bottom: 1.25rem;
-    line-height: 120%;
-    margin-top: 7.5rem;
+    margin-top: 7.3rem;
 }
 
 .main-about {
     text-align: right;
+}
+
+.main-about__gif {
+    height: 28.8125rem;
 }
 
 .block-content {
@@ -86,7 +112,6 @@ h1 {
 }
 
 .block-text {
-    font-size: 1.25rem;
     width: 42.625rem;
     margin-right: 10rem;
 }
@@ -104,13 +129,19 @@ h1 {
     padding-bottom: 3.75rem;
 }
 
+.main-team .block__description {
+    margin-top: 3.6rem;
+}
+
 .tour-map {
     margin-top: 3.75rem;
     position: relative;
+    width: fit-content;
+    margin: auto;
 }
 
 .tour-map__image {
-    width: 83.884375rem;
+    width: 74.5rem;
     display: block;
     margin: auto;
 }
@@ -120,7 +151,6 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.25rem;
     width: 2.25rem;
     height: 2.25rem;
     border: 1px dashed #FFFFFF;
@@ -138,30 +168,142 @@ h1 {
 
 .b-button {
     top: 12.125rem;
-    left: 35rem;
+    left: 31rem;
 }
 
 .g-button {
     top: 10.8125rem;
-    left: 62.0625rem;
+    left: 55.0625rem;
 }
 
 .t-button {
-    top: 21.5625rem;
-    left: 70.4375rem;
+    top: 19.5625rem;
+    left: 62.4375rem;
 }
 
 .k-button {
-    top: 25.9375rem;
-    left: 10.0625rem;
+    top: 22.9375rem;
+    left: 9.0625rem;
 }
 
 .team-list {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 2rem;
     margin-top: 3.75rem;
 }
+
+.list-item__image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 300ms ease-out;
+}
+
+.appear {
+    opacity: 1;
+}
+
+.modal-background {
+    position: fixed;
+    left: 0;
+    top:0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.tour-modal {
+    position: fixed;
+    top: 25%;
+    left: 37%;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header__header {
+
+}
+
+.modal-header__button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.modal-window__image {
+    padding: .9375rem 0;
+}
+
+.modal-window {
+    padding: 1.25rem;
+    background-color: #060606;
+    opacity: 1;
+    border: 1px dashed #FFFFFF;
+    width: 25rem;
+    height: 25rem;
+    box-sizing: border-box;
+}
+
+.modal-window-links {
+    font-size: .75rem;
+    display: flex;
+    flex-direction: column;
+    height: 10.75rem;
+    justify-content: center;
+    gap: .75rem;
+}
+
+.modal-window-link {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.link__name {
+    width: 5.5rem;
+    line-height: 120%;
+}
+
+.link__floor {
+    width: 4rem;
+}
+
+.link__link {
+    box-sizing: border-box;
+    width: 1.375rem;
+    height: 1.375rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px dashed #FFFFFF;
+    padding: 0.5rem;
+    margin-left: 3.625rem;
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: color 0.5s, background-color 0.5s;
+}
+
+.link__link:hover {
+    color: #060606;
+    background-color: #FFFFFF;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: flex;
+}
+
 
 .list-item {
     display: flex;
@@ -170,8 +312,6 @@ h1 {
 
 .list-item__header {
     width: 19.1875rem;
-    font-size: 2rem;
-    line-height: 120%;
 }
 
 .list-item-names {
@@ -179,7 +319,14 @@ h1 {
     flex-direction: column;
     gap: .25rem;
     color: #838383;
-    font-size: 1.25rem;
+}
+
+.list-item__name {
+    cursor: pointer;
+}
+
+.list-item__name:hover {
+    color: #FFFFFF;
 }
 
 .social-media {
@@ -193,8 +340,6 @@ h1 {
 
 .social-media__header {
     margin: 0;
-    font-size: .875rem;
-    font-weight: 400;
 }
 
 .social-media__link {
@@ -208,34 +353,298 @@ h1 {
 }
 
 .footer__rights {
-    font-family: 'Gogh', sans-serif;
-    font-style: normal;
-    font-weight: 400;
     width: 11.9375rem;
-}
-
-.footer__name {
-
 }
 
 .footer__gif {
     width: 5.8125rem;
 }
 
-@media (max-width: 760px) {
+.mobile {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .tour-map__image {
+        width: 42.5rem;
+        margin: auto;
+    }
+
+    .b-button {
+        top: 6.125rem;
+        left: 17.2rem;
+    }
+
+    .g-button {
+        top: 5.5rem;
+        left: 31.0625rem;
+    }
+
+    .t-button {
+        top: 10.9rem;
+        left: 35.2rem;
+    }
+
+    .k-button {
+        top: 12.9375rem;
+        left: 4.0625rem;
+    }
+
+    .header-nav__link:last-child{
+        margin-left: 13.0625rem;
+    }
+
+    .main-about__gif {
+        height: 32.0625rem;
+    }
+
+    .block-text {
+        width: 20.625rem;
+        margin-right: 0;
+        text-indent: 0;
+    }
+
+    .block-text__text {
+        margin: 0;
+        text-indent: 0;
+    }
+
+    .list-item {
+        gap: 8.6875rem;
+    }
 
 }
 
-@font-face {
-    font-family: 'VelaSansBold';
-    src: url("./fonts/VelaSans-Bold.ttf");
-    font-style: normal;
-    font-weight: normal;
+@media (max-width: 767px) {
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    .app {
+        padding: 0.75rem 1.25rem;
+    }
+
+    .header-nav {
+        flex-direction: column;
+        gap: 0.25rem;
+        width: 5rem;
+        font-size: .625rem;
+    }
+
+    .header-nav__link:last-child {
+        margin: 0;
+    }
+
+    .app-header {
+        padding-top: 0;
+        padding-bottom: 2.25rem;
+    }
+
+    .app-main {
+        padding-bottom: 1.75rem;
+        padding-top: 0;
+    }
+
+    .main-homepage {
+        background-size: 34.5625rem;
+    }
+
+    .main-homepage__title {
+        width: 11.25rem;
+    }
+
+    .block__description {
+        text-indent: 2rem;
+        padding-bottom: 1.5rem;
+        margin-bottom: .75rem;
+        margin-top: 3.75rem;
+    }
+
+    .title-name {
+        display: block;
+        margin-bottom: 1.5rem;
+    }
+
+    .main-about {
+        text-align: right;
+    }
+
+    .main-about__gif {
+        height: 15.8125rem;
+    }
+
+    .block-content {
+        display: block;
+    }
+
+    .block-text {
+        width: auto;
+        margin-right: 0;
+        text-indent: 2rem;
+    }
+
+    .block-text__text {
+        margin: 0;
+        text-indent: 2rem;
+    }
+
+    .subtext {
+        margin-left: 0;
+        margin-top: .75rem;
+    }
+
+    .main-tour .block__description, .main-team .block__description {
+        padding-bottom: 1.5rem;
+    }
+
+    .main-team .block__description {
+        margin-top: 3.6rem;
+    }
+
+    .tour-map {
+        margin-top: 3.75rem;
+        position: relative;
+    }
+
+    .tour-map__image {
+        width: 20rem;
+        margin: auto;
+    }
+
+    .map__button {
+        width: 1.75rem;
+        height: 1.75rem;
+    }
+
+    .b-button {
+        top: 17.2rem;
+        left: 11rem;
+    }
+
+    .g-button {
+        top: 30.5rem;
+        left: 12rem;
+    }
+
+    .t-button {
+        top: 34.6rem;
+        left: 6.6rem;
+    }
+
+    .k-button {
+        top: 4.6rem;
+        left: 5.0625rem;
+    }
+
+    .team-list {
+        gap: 2rem;
+        margin-top: 3.75rem;
+    }
+
+    .list-item__image {
+        display: none;
+    }
+
+    .tour-modal {
+        top: 25%;
+        left: 24%;
+    }
+
+    .modal-window__image {
+        padding: .9375rem 0;
+    }
+
+    .modal-window {
+        padding: 1.25rem;
+        width: 25rem;
+        height: 25rem;
+    }
+
+    .modal-window-links {
+        height: 10.75rem;
+        gap: .75rem;
+    }
+
+    .modal-window-link {
+        gap: 4rem;
+    }
+
+    .link__name {
+        width: 5.5rem;
+    }
+
+    .link__floor {
+        width: 4rem;
+    }
+
+    .link__link {
+        width: 1.375rem;
+        height: 1.375rem;
+        padding: 0.5rem;
+        margin-left: 3.625rem;
+    }
+
+    .list-item {
+        gap: 0.5rem;
+    }
+
+    .list-item__header {
+        width: 6.3125rem;
+        text-align: right;
+    }
+
+    .list-item-names {
+        gap: .25rem;
+    }
+
+    .social-media {
+        margin-top: 0;
+        gap: .25rem;
+        margin-bottom: 0;
+    }
+
+    .social-media__header {
+        margin: 0;
+    }
+
+    .app-footer {
+        display: flex;
+        flex-wrap: wrap-reverse;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer-mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 1.125rem;
+    }
+
+    .footer__rights {
+        width: 5rem;
+    }
+
+    .footer__name {
+        width: 14.1875rem;
+    }
+
+    .footer__gif {
+        width: 1.875rem;
+    }
+
+    .rights-and-name {
+        display: flex;
+        gap: 1.75rem;
+    }
+
+    .socials-and-gif {
+        display: flex;
+        gap: 4.875rem;
+    }
+
 }
 
-@font-face {
-    font-family: 'VelaSansRegular';
-    src: url("./fonts/VelaSans-Regular.ttf");
-    font-style: normal;
-    font-weight: normal;
-}

@@ -1,0 +1,107 @@
+@import "./fonts/Gogh/stylesheet.css";
+
+h1 {
+    font-family: 'Gogh', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 5.25rem;
+    margin: 0;
+    line-height: 100%;
+}
+
+h2 {
+    font-family: 'VelaSansRegular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2rem;
+    margin: 0;
+    line-height: 120%;
+}
+
+h3 {
+    font-family: 'VelaSansRegular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.625rem;
+    margin: 0;
+    line-height: 120%;
+}
+
+.q {
+    font-family: 'VelaSansRegular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.25rem;
+    margin: 0;
+    line-height: 120%;
+}
+
+.p {
+    font-family: 'VelaSansRegular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: .875rem;
+    margin: 0;
+    line-height: 120%;
+}
+
+.span {
+    font-family: 'Gogh', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    margin: 0;
+    line-height: 110%;
+}
+
+@media (max-width: 767px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: .9375rem;
+    }
+
+    h3 {
+        font-size: 1.125rem;
+    }
+
+    .q {
+        font-size: .9375rem;
+    }
+
+    .p {
+
+        font-size: .625rem;
+    }
+
+    .span {
+        font-size: .875rem;
+    }
+
+    .text {
+        font-family: 'Gogh', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 0.5rem;
+        margin: 0;
+        line-height: 110%;
+    }
+
+}
+
+
+@font-face {
+    font-family: 'VelaSansBold';
+    src: url("./fonts/VelaSans-Bold.ttf");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'VelaSansRegular';
+    src: url("./fonts/VelaSans-Regular.ttf");
+    font-style: normal;
+    font-weight: normal;
+}
