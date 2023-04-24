@@ -10,11 +10,14 @@
 <div class="app">
     <header class="app-header">
         <a href="https://metalab.su/"><img src="./assets/elements/Лого.svg" class="header-logo" alt="logo"></a>
-        <nav class="header-nav">
+        <div class="burger-background hidden" id="burger-background"></div>
+        <nav class="header-nav desktop" id="nav">
             <a class="header-nav__link p" href="#about">О проекте</a>
             <a class="header-nav__link p" href="#tour">Виртуальный тур</a>
             <a class="header-nav__link p" href="#team">Команда</a>
         </nav>
+
+        <button class="header-burger mobile" id="burger"><img src="./assets/elements/burger.svg"></button>
     </header>
     <main class="app-main">
         <div class="main-homepage">

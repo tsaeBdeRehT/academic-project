@@ -7,6 +7,9 @@ const kButton = document.getElementById('K');
 const modal = document.getElementById('modal-window');
 const background = document.getElementById('modal-background');
 const closeButton = document.getElementById('header-button');
+const burgerMenu = document.getElementById('burger');
+const nav = document.getElementById('nav');
+const burgerBackground = document.getElementById('burger-background');
 
 const blockLinks = document.getElementById('links');
 const modalImage = document.getElementById('modal-image');
@@ -70,6 +73,18 @@ const hideModal = () => {
     document.body.style.overflow = "auto";
 }
 
+const openMenu = () => {
+    burgerMenu.style.display = "none";
+    nav.classList.remove('desktop');
+    burgerBackground.classList.remove('hidden');
+}
+
+const closeMenu = () => {
+    nav.classList.add('desktop');
+    burgerMenu.style.display = "block";
+    burgerBackground.classList.add('hidden');
+}
+
 for (let item of names) {
     item.addEventListener("mouseenter", (e) => listener(e));
     item.addEventListener("mouseleave", clearImage);
@@ -81,3 +96,7 @@ tButton.addEventListener('click', (e) => onButtonClick(e));
 kButton.addEventListener('click', (e) => onButtonClick(e));
 background.addEventListener("click", hideModal);
 closeButton.addEventListener("click", hideModal);
+burgerMenu.addEventListener("click", openMenu);
+nav.addEventListener('click', closeMenu);
+burgerBackground.addEventListener('click', closeMenu);
+
