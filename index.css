@@ -413,6 +413,10 @@ body {
         gap: 8.6875rem;
     }
 
+    .footer__name {
+        width: 17.75rem;
+    }
+
 }
 
 @media (max-width: 767px) {
