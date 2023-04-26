@@ -7,13 +7,16 @@ const kButton = document.getElementById('K');
 const modal = document.getElementById('modal-window');
 const background = document.getElementById('modal-background');
 const closeButton = document.getElementById('header-button');
-const burgerMenu = document.getElementById('burger');
-const nav = document.getElementById('nav');
-const burgerBackground = document.getElementById('burger-background');
 
 const blockLinks = document.getElementById('links');
 const modalImage = document.getElementById('modal-image');
 const modalHeader = document.getElementById('modal-header');
+
+const modalBackground = document.getElementById('team-background');
+const teamModal = document.getElementById('team-window')
+const teamModalHeader = document.getElementById('tem-header');
+const teamButton = document.getElementById('team-button');
+const teamImage = document.getElementById('team-image');
 
 const listener = (e) => {
     const name = e.target.innerText;
@@ -55,7 +58,7 @@ const onButtonClick = (e) => {
         htmlLinks += `<div class="modal-window-link">
                             <div class="link__name p">${name}</div>
                             <div class="link__floor p" >${floor}</div>
-                            <a class="link__link" href="${link}">🡭</a>
+                            <a class="link__link" href="${link}"></a>
                         </div>`
     });
     blockLinks.innerHTML = htmlLinks;
@@ -73,21 +76,18 @@ const hideModal = () => {
     document.body.style.overflow = "auto";
 }
 
-const openMenu = () => {
-    burgerMenu.style.display = "none";
-    nav.classList.remove('desktop');
-    burgerBackground.classList.remove('hidden');
-}
-
-const closeMenu = () => {
-    nav.classList.add('desktop');
-    burgerMenu.style.display = "block";
-    burgerBackground.classList.add('hidden');
+const showTeamModal = (e) => {
+    const name = e.target.innerText;
+    teamModalHeader.innerText = name;
+    teamImage.setAttribute('src', `./assets/people/${name}.png`)
+    modalBackground.classList.remove('hidden');
+    teamModal.classList.remove('hidden');
 }
 
 for (let item of names) {
     item.addEventListener("mouseenter", (e) => listener(e));
     item.addEventListener("mouseleave", clearImage);
+    item.addEventListener('click', (e) => showTeamModal(e));
 }
 
 bButton.addEventListener('click', (e) => onButtonClick(e));
@@ -96,7 +96,4 @@ tButton.addEventListener('click', (e) => onButtonClick(e));
 kButton.addEventListener('click', (e) => onButtonClick(e));
 background.addEventListener("click", hideModal);
 closeButton.addEventListener("click", hideModal);
-burgerMenu.addEventListener("click", openMenu);
-nav.addEventListener('click', closeMenu);
-burgerBackground.addEventListener('click', closeMenu);
 

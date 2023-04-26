@@ -10,14 +10,11 @@
 <div class="app">
     <header class="app-header">
         <a href="https://metalab.su/"><img src="./assets/elements/Лого.svg" class="header-logo" alt="logo"></a>
-        <div class="burger-background hidden" id="burger-background"></div>
-        <nav class="header-nav desktop" id="nav">
+        <nav class="header-nav" id="nav">
             <a class="header-nav__link p" href="#about">О проекте</a>
             <a class="header-nav__link p" href="#tour">Виртуальный тур</a>
             <a class="header-nav__link p" href="#team">Команда</a>
         </nav>
-
-        <button class="header-burger mobile" id="burger"><img src="./assets/elements/burger.svg"></button>
     </header>
     <main class="app-main">
         <div class="main-homepage">
@@ -85,6 +82,7 @@
                 </div>
             </div>
             <div class="team-list">
+                <img class="list-item__image" id="image">
                 <div class="list-item">
                     <h2 class="list-item__header">Руководитель</h2>
                     <div class="list-item-names q">
@@ -139,13 +137,23 @@
                         <div class="list-item__name">Коротаева Дарья</div>
                     </div>
                 </div>
-                <img class="list-item__image" id="image">
+                <div class="modal-background hidden mobile" id="team-background"></div>
+                <div class="team-modal hidden mobile" id="team-window">
+                    <div class="modal-window">
+                        <div class="modal-header">
+                            <div class="modal-header__header span" id="tem-header">Николаева Вероника</div>
+                            <button class="modal-header__button" id="team-button"><img src="./assets/elements/cross.svg"></button>
+                        </div>
+                        <img class="modal-window__image" id="team-image">
+                    </div>
+                </div>
+
             </div>
         </div>
         <div class="social-media desktop">
             <div class="social-media__header p">социальные сети</div>
-            <a class="social-media__link p">vkontakte 🡭</a>
-            <a class="social-media__link p">telegram 🡭</a>
+            <a class="social-media__link p">vkontakte <img src="./assets/elements/arrow-gray.svg" alt="arrow"></a>
+            <a class="social-media__link p">telegram <img src="./assets/elements/arrow-gray.svg" alt="arrow"></a>
         </div>
     </main>
     <footer class="app-footer">
