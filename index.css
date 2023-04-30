@@ -39,7 +39,7 @@ body {
     cursor: pointer;
     position: relative;
     text-decoration: none;
-    color: #FFFFFF;
+    color: #FFFFFF !important;
 }
 
 .header-nav__link:after {
@@ -71,7 +71,7 @@ body {
 }
 
 .main-homepage {
-    background-image: url("./assets/elements/gif-1.gif");
+    background-image: url("https://raw.githubusercontent.com/tsaeBdeRehT/academic-project/main/assets/elements/gif-1.gif");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 71.875rem;
@@ -148,7 +148,8 @@ body {
     align-items: center;
     width: 2.25rem;
     height: 2.25rem;
-    background: no-repeat center/2.25rem url("./assets/elements/button-border.png");
+    box-sizing: border-box;
+    background: no-repeat center/2.25rem url("https://raw.githubusercontent.com/tsaeBdeRehT/academic-project/main/assets/elements/button-border.png");
     border: none;
     border-radius: 50%;
     cursor: pointer;
@@ -203,20 +204,18 @@ body {
     opacity: 1;
 }
 
-.modal-background {
+
+
+.tour-modal, .team-modal {
     position: fixed;
-    left: 0;
-    top:0;
-    height: 100vh;
     width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    top: 0;
     background-color: rgba(0, 0, 0, 0.5);
-}
-
-.tour-modal {
-    position: fixed;
-
-    top: 25%;
-    left: 37%;
 }
 
 .modal-header {
@@ -235,9 +234,18 @@ body {
     padding: .9375rem 0;
 }
 
+.team-modal .modal-window__image {
+    height: 20.3125rem;
+    width: auto;
+    display: block;
+    margin: auto;
+
+}
+
 .modal-window {
+
     padding: 1.25rem;
-    background-image: url("assets/elements/popup-border.png");
+    background-image: url("https://raw.githubusercontent.com/tsaeBdeRehT/academic-project/main/assets/elements/popup-border.png");
     background-size: 25rem;
     opacity: 1;
     width: 25rem;
@@ -250,8 +258,13 @@ body {
     display: flex;
     flex-direction: column;
     height: 11.75rem;
-    justify-content: center;
+    justify-content: space-between;
     gap: .75rem;
+}
+
+.modal-window-link:only-child {
+    justify-items: center;
+    height: 100%;
 }
 
 .modal-window-link {
@@ -266,19 +279,20 @@ body {
 }
 
 .link__floor {
-    width: 4rem;
+    width: 4.5rem;
 }
 
 .link__link {
     box-sizing: border-box;
     width: 1.375rem;
     height: 1.375rem;
-    background: no-repeat center/1.375rem url("./assets/elements/link-border.png"), no-repeat center/0.475rem url("./assets/elements/arrow.svg") ;
+    background: no-repeat center/1.375rem url("https://raw.githubusercontent.com/tsaeBdeRehT/academic-project/main/assets/elements/link-border.png"),
+    no-repeat center/0.475rem url("https://raw.githubusercontent.com/tsaeBdeRehT/academic-project/main/assets/elements/arrow.svg") ;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0.5rem;
-    margin-left: 3.625rem;
+    margin-left: 3.125rem;
     color: #FFFFFF;
     text-decoration: none;
     transition: color 0.5s, background-color 0.5s;
@@ -286,7 +300,13 @@ body {
 
 .link__link:hover {
     color: #060606;
-    background: no-repeat center/1.375rem url("./assets/elements/link-border.png"), no-repeat center/0.475rem url("./assets/elements/arrow-black.svg"), #FFFFFF;
+    background: no-repeat center/1.375rem url("https://raw.githubusercontent.com/tsaeBdeRehT/academic-project/main/assets/elements/link-border.png"),
+    no-repeat center/0.475rem url("https://raw.githubusercontent.com/tsaeBdeRehT/academic-project/main/assets/elements/arrow-black.svg"),
+    #FFFFFF;
+}
+
+.hidden {
+    display: none;
 }
 
 .show {
@@ -332,7 +352,7 @@ body {
 }
 
 .social-media__link {
-    color: #838383;
+    color: #838383 !important;
 }
 
 .app-footer {
@@ -351,6 +371,12 @@ body {
 
 .mobile {
     display: none;
+}
+
+@media (min-width: 1680px) {
+    .app {
+        width: 1680px;
+    }
 }
 
 @media (max-width: 1440px) {
@@ -415,6 +441,7 @@ body {
     .list-item__image {
         width: 36.125rem;
     }
+
 }
 
 @media (max-width: 960px) {
@@ -425,7 +452,17 @@ body {
     .list-item__name:hover {
         color: #838383;
     }
+
+    .tablet {
+        display: flex;
+    }
+
+    .hidden {
+        display: none;
+    }
+
 }
+
 
 @media (max-width: 768px) {
     .desktop {
@@ -435,6 +472,12 @@ body {
     .mobile {
         display: block;
     }
+
+    .tablet {
+        display: block;
+    }
+
+
 
     .app {
         padding: 0.75rem 1.25rem;
@@ -466,7 +509,7 @@ body {
     }
 
     .app-main {
-        padding-bottom: 1.75rem;
+        padding-bottom: 3.75rem;
         padding-top: 0;
     }
 
@@ -518,6 +561,10 @@ body {
         margin-top: .75rem;
     }
 
+    .team-modal {
+        display: flex;
+    }
+
     .main-tour .block__description, .main-team .block__description {
         padding-bottom: 1.5rem;
     }
@@ -539,7 +586,7 @@ body {
     .map__button {
         width: 1.75rem;
         height: 1.75rem;
-        background: no-repeat center/1.75rem url("./assets/elements/button-border.png");
+        background: no-repeat center/1.75rem url("https://raw.githubusercontent.com/tsaeBdeRehT/academic-project/main/assets/elements/button-border.png");
     }
 
     .b-button {
@@ -571,23 +618,20 @@ body {
         display: none;
     }
 
-    .tour-modal {
-        top: 25%;
-        left: 24%;
-    }
 
     .modal-window__image {
         padding: .9375rem 0;
+        width: 20.9375rem;
     }
 
     .modal-window {
         padding: 1.25rem;
-        width: 25rem;
-        height: 25rem;
+        background-size: 23.4rem 25rem;
+        width: 23.4375rem;
     }
 
     .modal-window-links {
-        height: 10.75rem;
+        height: 12.3rem;
         gap: .75rem;
     }
 
@@ -607,7 +651,7 @@ body {
         width: 1.375rem;
         height: 1.375rem;
         padding: 0.5rem;
-        margin-left: 3.625rem;
+        margin-left: 2.3rem;
     }
 
     .list-item {
@@ -676,9 +720,8 @@ body {
         width: 100vw;
     }
 
-}
+    .hidden {
+        display: none;
+    }
 
-.hidden {
-    display: none;
 }
-

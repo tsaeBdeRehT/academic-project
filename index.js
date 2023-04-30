@@ -20,7 +20,7 @@ const teamImage = document.getElementById('team-image');
 
 const listener = (e) => {
     const name = e.target.innerText;
-    image.setAttribute("src", `./assets/people/${name}.jpg`);
+    image.setAttribute("src", `https://raw.githubusercontent.com/tsaeBdeRehT/academic-project/main/assets/people/${name}.jpg`);
     image.setAttribute("alt", `${name}`);
     image.classList.add('appear');
 }
@@ -56,30 +56,49 @@ const onButtonClick = (e) => {
     let htmlLinks = '';
     links.forEach(({name, floor, link}) => {
         htmlLinks += `<div class="modal-window-link">
-                            <div class="link__name p">${name}</div>
-                            <div class="link__floor p" >${floor}</div>
-                            <a class="link__link" href="${link}"></a>
+                            <div class="link__name">${name}</div>
+                            <div class="link__floor" >${floor}</div>
+                            <a class="link__link" href="${link}" target="_blank"></a>
                         </div>`
     });
     blockLinks.innerHTML = htmlLinks;
     modalHeader.innerHTML = `${e.target.innerText} корпус`;
-    modalImage.setAttribute('src', `./assets/corpus/${e.target.innerText} корпус.png`);
+    modalImage.setAttribute('src', `https://raw.githubusercontent.com/tsaeBdeRehT/academic-project/main/assets/corpus/${e.target.innerText} корпус.png`);
     modalImage.setAttribute('alt', `${e.target.innerText} корпус`);
     modal.classList.remove('hidden');
     background.classList.remove('hidden');
-    document.body.style.overflow = "hidden";
 }
 
-const hideModal = () => {
+const hideModal = (e) => {
+    if (e.target === background || e.target === closeButton) {
+        modal.classList.add('hidden');
+        background.classList.add('hidden');
+    }
+}
+
+const hideButtonModal = () => {
     modal.classList.add('hidden');
     background.classList.add('hidden');
-    document.body.style.overflow = "auto";
+}
+
+
+const hideTeamModal = (e) => {
+    if (e.target === modalBackground || e.target === teamButton) {
+        teamModal.classList.add('hidden');
+        modalBackground.classList.add('hidden');
+    }
+
+}
+
+const hideButtonTeamModal = () => {
+    teamModal.classList.add('hidden');
+    modalBackground.classList.add('hidden');
 }
 
 const showTeamModal = (e) => {
     const name = e.target.innerText;
     teamModalHeader.innerText = name;
-    teamImage.setAttribute('src', `./assets/people/${name}.png`)
+    teamImage.setAttribute('src', `https://raw.githubusercontent.com/tsaeBdeRehT/academic-project/main/assets/people/${name}.jpg`)
     modalBackground.classList.remove('hidden');
     teamModal.classList.remove('hidden');
 }
@@ -94,6 +113,7 @@ bButton.addEventListener('click', (e) => onButtonClick(e));
 gButton.addEventListener('click', (e) => onButtonClick(e));
 tButton.addEventListener('click', (e) => onButtonClick(e));
 kButton.addEventListener('click', (e) => onButtonClick(e));
+modalBackground.addEventListener("click", hideTeamModal);
+teamButton.addEventListener("click", hideButtonTeamModal);
 background.addEventListener("click", hideModal);
-closeButton.addEventListener("click", hideModal);
-
+closeButton.addEventListener("click", hideButtonModal);
